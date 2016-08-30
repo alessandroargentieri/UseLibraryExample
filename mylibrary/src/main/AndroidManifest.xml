@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="argentieri.alessandro.mylibrary">
 
@@ -5,7 +6,12 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true">
-
+        <activity android:name=".LibraryActivity">
+            <intent-filter>
+                <action android:name="argentieri.alessandro.uselibraryexample.GET_NUMBER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

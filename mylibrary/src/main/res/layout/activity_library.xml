@@ -6,11 +6,19 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/edit"
+        android:hint="Write number here"
+        android:inputType="number"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Start Activity"
-        android:onClick="Try_To_Get_Number"/>
+        android:text="Return"
+        android:onClick="GetNumber"/>
 </LinearLayout>
