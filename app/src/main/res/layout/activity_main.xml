@@ -7,10 +7,38 @@
     android:orientation="vertical">
 
 
+    <TextView
+        android:textColor="#FFEECC"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        android:text="Activity calling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textResult"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="Start Activity"
         android:onClick="Try_To_Get_Number"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Start Activity for Result"
+        android:onClick="startActivity4Result"/>
+
+
 </LinearLayout>

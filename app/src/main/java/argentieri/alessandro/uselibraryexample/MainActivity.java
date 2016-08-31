@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import argentieri.alessandro.mylibrary.LibraryClass;
@@ -11,6 +12,7 @@ import argentieri.alessandro.mylibrary.LibraryClass;
 
 public class MainActivity extends AppCompatActivity {
     String CUSTOM_ACTION = "argentieri.alessandro.uselibraryexample.GET_NUMBER";
+    int GET_NUMBER_REQUEST = 3243; //custom REQUEST_CODE
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +28,29 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent();
         i.setAction(CUSTOM_ACTION);
         startActivity(i);
+
+    }
+
+    public void startActivity4Result(View v){
+        Intent intent = new Intent();
+        intent.setAction(CUSTOM_ACTION);  //implicit intent because we don't define which Activity will open but only the intent action
+        startActivityForResult(intent, GET_NUMBER_REQUEST);
         //controllo i risultati in onActivityResult
     }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == GET_NUMBER_REQUEST && resultCode == RESULT_OK) {
+            String number_back = (String) data.getExtras().get("Result_number");
+            TextView tx = (TextView) findViewById(R.id.textResult);
+            tx.setText(number_back);
+        }
+    }
+
+
+
+
 
 
 }
