@@ -40,5 +40,12 @@
         android:text="Start Activity for Result"
         android:onClick="startActivity4Result"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Call File Chooser"
+        android:onClick="CallFileChooser"/>
+
 
 </LinearLayout>

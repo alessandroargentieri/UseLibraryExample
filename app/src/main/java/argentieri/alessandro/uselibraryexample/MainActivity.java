@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+
+import argentieri.alessandro.mylibrary.FileChooser;
 import argentieri.alessandro.mylibrary.LibraryClass;
 
 
@@ -38,6 +41,25 @@ public class MainActivity extends AppCompatActivity {
         //controllo i risultati in onActivityResult
     }
 
+    public void CallFileChooser(View v){
+       /* new FileChooser(this.getParent()).setFileListener(new FileChooser.FileSelectedListener() {
+            @Override public void fileSelected(final File file) {
+                // do something with the file
+
+            }).showDialog(); */
+
+        FileChooser fC = new FileChooser(this);
+        fC.setFileListener(new FileChooser.FileSelectedListener(){
+            @Override
+            public void fileSelected(final File file){
+                String path = file.getAbsolutePath();
+                TextView tx = (TextView) findViewById(R.id.textResult);
+                tx.setText(path);
+            }
+        }
+        ).showDialog();
+
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -47,10 +69,6 @@ public class MainActivity extends AppCompatActivity {
             tx.setText(number_back);
         }
     }
-
-
-
-
 
 
 }
